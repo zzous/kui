@@ -17,27 +17,28 @@ export default defineConfig(({ mode }) => {
           }
       }
   } : {};
-return{
-  plugins: [
-    vue(),
-    vuetify({ autoImport: true }),
-    ckeditor5({ theme: require.resolve('@ckeditor/ckeditor5-theme-lark') })
-  ],
-  resolve: {
+
+  return {
+    plugins: [
+      vue(),
+      vuetify({ autoImport: true }),
+      ckeditor5({ theme: require.resolve('@ckeditor/ckeditor5-theme-lark') })
+    ],
+    resolve: {
       alias: {
-          '@': fileURLToPath(new URL('./src', import.meta.url))
+        '@': fileURLToPath(new URL('./src', import.meta.url))
       }
-  },
-  server: {
+    },
+    server: {
       proxy: {
-          '^/api': {
-              target: 'http://localhost:8080',
-              changeOrigin: true,
-              secure: false,
-              rewrite: path => path.replace(/^\/api/, '')
-          }
+        '^/api': {
+          target: 'http://localhost:8080',
+          changeOrigin: true,
+          secure: false,
+          rewrite: path => path.replace(/^\/api/, '')
+        }
       }
-  },
-}
-build: _buildOptions
+    },
+    build: _buildOptions
+  }
 })
