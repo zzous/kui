@@ -4,7 +4,15 @@
         <v-btn @click="openSample">샘플페이지 이동</v-btn>
         <v-btn @click="openModal">모달열기</v-btn>
     </div> -->
-    
+    로그 레벨 조회 검색 항목 이름: 인풋, 적용 레벨, 셀렉트(전체)
+    로그레벨 목록  헤더 : no, 이름, 적용 레벨, 환경 레벨
+    1, root, info, info
+    2. JdbCallLogging, info
+    3. TRACE,TRACE,TRACE
+    상세 전체 수정 가능
+
+    전문 이력 조회 검색 항목 기간 조회  전문ID 결과코드 
+    전문 이력 목록 헤더 NO, 전문ID, 전달일시, 결과코드,
     <SearchBox @onSearchResult="onSearchResult" @onReload="onReload">
         <template #formItem>
             <div class="item">
