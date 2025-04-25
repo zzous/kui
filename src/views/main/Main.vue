@@ -14,21 +14,55 @@
                 </div>
             </div>
              <div class="item" >
-                    <label>서버 선택</label>
-                    <div class="input">
-                        <div class="dv">
-                            <select class="custom-select" style="width:360px;" placeholder="서버를 선택하세요" v-model="state.groupname">
-                                <option value="" disabled>서버를 선택하세요</option>
-                                <option value="1">운영서버</option>
-                                <option value="2">개발서버</option>
-                            </select>
-                        </div>
+                <label>서버 선택</label>
+                <div class="input">
+                    <div class="dv">
+                        <select class="custom-select" style="width:360px;" placeholder="서버를 선택하세요" v-model="state.groupname">
+                            <option value="" disabled>서버를 선택하세요</option>
+                            <option value="1">운영서버</option>
+                            <option value="2">개발서버</option>
+                        </select>
                     </div>
                 </div>
-            <div class="item">
-                <label>키워드 검색</label>
-                <div class="input">
-                    <div class="dv"><input type="text" class="form-control" placeholder="키워드를 검색 하세요" style="width:360px;"/></div>
+            </div>
+            <div class="item mt-5 w-100" style="margin-left:0;background:#eee">
+                <div class="item">
+                    <label>GUID</label>
+                    <div class="input">
+                        <div class="dv"><input type="text" class="form-control" placeholder="표준글로벌ID" style="width:250px;"/></div>
+                    </div>
+                </div>
+                <div class="item">
+                    <label>인터페이스ID</label>
+                    <div class="input">
+                        <div class="dv"><input type="text" class="form-control" placeholder="표준글로벌ID" style="width:250px;"/></div>
+                    </div>
+                </div>
+                <div class="item">
+                    <label>고객번호</label>
+                    <div class="input">
+                        <div class="dv"><input type="text" class="form-control" placeholder="표준글로벌ID" style="width:250px;"/></div>
+                    </div>
+                </div>
+            </div>
+            <div class="item mt-5 w-100" style="margin-left:0">
+                <div class="item">
+                    <label>GUID</label>
+                    <div class="input">
+                        <div class="dv"><input type="text" class="form-control" placeholder="표준글로벌ID" style="width:250px;"/></div>
+                    </div>
+                </div>
+                <div class="item">
+                    <label>인터페이스ID</label>
+                    <div class="input">
+                        <div class="dv"><input type="text" class="form-control" placeholder="표준글로벌ID" style="width:250px;"/></div>
+                    </div>
+                </div>
+                <div class="item">
+                    <label>고객번호</label>
+                    <div class="input">
+                        <div class="dv"><input type="text" class="form-control" placeholder="표준글로벌ID" style="width:250px;"/></div>
+                    </div>
                 </div>
             </div>
         </template>
