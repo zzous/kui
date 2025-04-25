@@ -27,7 +27,7 @@
                     </div>
                 </div>
             </div>
-            <div class="item mt-5 w-100" style="margin-left:0;background:#eee;padding:20px 10px 10px 10px; border-top:solid 1px #666">
+            <div class="item w-100" style="margin-left:0;background:#eee;padding:20px 10px 10px 10px; border-top:solid 1px #666">
                 <div class="item">
                     <label>GUID</label>
                     <div class="input">
