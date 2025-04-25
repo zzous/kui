@@ -45,7 +45,7 @@
                     </div>
                 </div>
             </div>
-            <div class="item  w-100" style="margin-left:0;margin-left:0;background:#eee;padding:20px 10px 10px 10px; border-top:solid 1px #999">
+            <div class="item  w-100" style="margin-left:0;margin-left:0;background:#eee;padding:20px 10px 10px 10px; border-top:solid 1px #666">
                 <div class="item">
                     <label>연계구분</label>
                     <div class="input">
