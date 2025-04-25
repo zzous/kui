@@ -259,7 +259,7 @@ const state = reactive({
         {
             groupname: 'KCOPUBWIFO 1000200030050403450',
             prname: 'UBW_1KIWS00215',
-            prename: '정상',
+            prenname: '정상',
             prtype: '',
             description: 'KCI',
             register: '',
@@ -270,7 +270,7 @@ const state = reactive({
         {
             groupname: 'KCOPUBWIFO 000200030050403450',
             prname: 'UBW_1KIWS00215',
-            prename: '정상',
+            prenname: '정상',
             prtype: '',
             description: 'KCI',
             register: '',
@@ -281,7 +281,7 @@ const state = reactive({
         {
             groupname: 'KCOPUBWIFO 1000200030050403450',
             prname: 'UBW_1KIWS00215',
-            prename: '정상',
+            prenname: '정상',
             prtype: '',
             description: 'KCI',
             register: '',
