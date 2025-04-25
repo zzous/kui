@@ -37,7 +37,7 @@
                 <div class="item">
                     <label>인터페이스ID</label>
                     <div class="input">
-                        <div class="dv"><input type="text" class="form-control" placeholder="인터페이스ID" style="width:250px;background:#fff"/></div>
+                        <div class="dv"><input type="text" class="form-control" placeholder="UBW_1KIWS00215" style="width:250px;background:#fff"/></div>
                     </div>
                 </div>
                 <div class="item">
