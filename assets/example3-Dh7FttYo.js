@@ -1,4 +1,4 @@
-import{r as v,g as l,e as o,f as t,i as S,x as p,t as r,F as b,j as h,n as d}from"./index-NgLGnAmP.js";const k={class:"guidecontent"},C={class:"guidetitle"},T=["onClick"],x=["onClick"],f={__name:"example3",props:{sampleProps:{type:Object,default:()=>{}}},setup(m){const c=v({className:"",codeSample:[{title:"HTML",sampleCodeJS:`<SearchBox 
+import{r as v,g as l,e as o,f as t,i as S,x as p,t as r,F as b,j as h,n as d}from"./index-D2svJi1b.js";const k={class:"guidecontent"},C={class:"guidetitle"},T=["onClick"],x=["onClick"],f={__name:"example3",props:{sampleProps:{type:Object,default:()=>{}}},setup(m){const c=v({className:"",codeSample:[{title:"HTML",sampleCodeJS:`<SearchBox 
     :subTitle="'사용자 검색'"
     :placeholderText="'텍스트를 입력하세요'"
     :errorMessage="'error message'"
