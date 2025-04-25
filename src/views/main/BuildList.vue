@@ -13,15 +13,21 @@
                     <div class="dv"><DatePicker ref="datepicker" :dayOpionType=state.dayOpionType  @selectDay ="selectDay" :optionsType="true"/></div>
                 </div>
             </div>
-            <div class="item">
-                <label>키워드 검색</label>
-                <div class="input">
-                    <div class="dv"><input type="text" class="form-control" placeholder="키워드를 검색 하세요" style="width:360px;"/></div>
-                </div>
-            </div>
-            <div class="item mt-5 w-100" style="margin-left:0">
             
-                <div class="item" >
+            <div class="item mt-5 w-100" style="margin-left:0">
+                <div class="item">
+                    <label>전문ID</label>
+                    <div class="input">
+                        <div class="dv"><input type="text" class="form-control" placeholder="전문 ID를 검색 하세요" style="width:200px;"/></div>
+                    </div>
+                </div>
+                <div class="item">
+                    <label>결과코드</label>
+                    <div class="input">
+                        <div class="dv"><input type="text" class="form-control" placeholder="결과코드를 검색 하세요" style="width:200px;"/></div>
+                    </div>
+                </div>
+                <div class="item" v-if="false">
                     <label>서비스 그룹명</label>
                     <div class="input">
                         <div class="dv">
@@ -34,7 +40,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="item">
+                <div class="item"  v-if="false">
                     <label>프로젝트 명</label>
                     <div class="input">
                         <div class="dv">
@@ -104,10 +110,8 @@ const state = reactive({
     modalType:false,
     value: [
         { headerCheckboxSelection: true, checkboxSelection: true, maxWidth: 30 },
-        { headerName: '서비스 그룹명',  field: 'groupname',  maxWidth: 120,
-           
-        },
-        { headerName: '프로젝트 명',  field: 'prname', flex: 1,
+        // { headerName: '전문ID',  field: 'groupname',  maxWidth: 120 },
+        { headerName: '전문ID',  field: 'prname', flex: 1,
             cellRenderer: (params) => {
                 const tagString = `<div id="prname-${params.node.rowIndex}"><a href="javascript:void(0)" class="link">${params.data.prname}</a></div>`;
                 const tagTarget = document.createElement('div');
@@ -120,37 +124,37 @@ const state = reactive({
                 return tagTarget;
             }
         },
-        { headerName: '빌드명',  field: 'prenname', flex: 1, suppressSizeToFit: true },
-        { headerName: '젠킨스 빌드명',  field: 'prtype',  flex:1},
-        { headerName: '등록자',  field: 'register', flex: 1 },
-        { headerName: '등록일',  field: 'date', flex: 1 },
-        { headerName: '빌드',  field: 'url', maxWidth: 100, 
-            cellRenderer: (params) => {
-                const tagString = `<div id="url-${params.node.rowIndex}"><button type="button" class="btn btn-ss">요청</button></div>`;
-                const tagTarget = document.createElement('div');
-                tagTarget.innerHTML = tagString;
-                const buttonEventTarget = tagTarget.querySelector(`#url-${params.node.rowIndex}`);
-                buttonEventTarget.addEventListener('click', (event) => {
-                    console.log(params.data.url);
-                    openModal();
+        // { headerName: '빌드명',  field: 'prenname', flex: 1, suppressSizeToFit: true },
+        { headerName: '결과코드',  field: 'prtype',  flex:1},
+        { headerName: '전달 일시',  field: 'register', flex: 1 },
+        // { headerName: '등록일',  field: 'date', flex: 1 },
+        // { headerName: '빌드',  field: 'url', maxWidth: 100, 
+        //     cellRenderer: (params) => {
+        //         const tagString = `<div id="url-${params.node.rowIndex}"><button type="button" class="btn btn-ss">요청</button></div>`;
+        //         const tagTarget = document.createElement('div');
+        //         tagTarget.innerHTML = tagString;
+        //         const buttonEventTarget = tagTarget.querySelector(`#url-${params.node.rowIndex}`);
+        //         buttonEventTarget.addEventListener('click', (event) => {
+        //             console.log(params.data.url);
+        //             openModal();
                 
-                });
-                return tagTarget;
-            }
-        },
-        { headerName: '이력',  field: 'view', maxWidth: 100, 
-            cellRenderer: (params) => {
-                const tagString = `<div id="url-${params.node.rowIndex}"><button type="button" class="btn btn-ss">보기</button></div>`;
-                const tagTarget = document.createElement('div');
-                tagTarget.innerHTML = tagString;
-                return tagTarget;
-            }
-        },
+        //         });
+        //         return tagTarget;
+        //     }
+        // },
+        // { headerName: '이력',  field: 'view', maxWidth: 100, 
+        //     cellRenderer: (params) => {
+        //         const tagString = `<div id="url-${params.node.rowIndex}"><button type="button" class="btn btn-ss">보기</button></div>`;
+        //         const tagTarget = document.createElement('div');
+        //         tagTarget.innerHTML = tagString;
+        //         return tagTarget;
+        //     }
+        // },
     ],
     rowData: [
         {
-            groupname: 'AlHub',
-            prname: '스프링부트 메이븐 2',
+            
+            prname: 'WCZ75A11751_I',
             prenname: 'build-UCA-591',
             prtype: 'build-UCA-591',
             register: '김용국',
@@ -158,26 +162,7 @@ const state = reactive({
             date: '2023.04.12 13:22:14',
             view:''
         },
-        {
-            groupname: 'AlHub',
-            prname: '스프링부트 메이븐 2',
-            prenname: 'build-UCA-591',
-            prtype: 'build-UCA-591',
-            register: '김용국',
-            url: '',
-            date: '2023.04.12 13:22:14',
-            view:''
-        },
-        {
-            groupname: 'AlHub',
-            prname: '스프링부트 메이븐 2',
-            prenname: 'build-UCA-591',
-            prtype: 'build-UCA-591',
-            register: '김용국',
-            url: '',
-            date: '2023.04.12 13:22:14',
-            view:''
-        },
+        
     ],
     defaultColDef: {
         sortable: false,
