@@ -7,12 +7,24 @@
     
     <SearchBox @onSearchResult="onSearchResult" @onReload="onReload">
         <template #formItem>
-            <div class="item">
+            <div class="item"v-if="false">
                 <label>기간조회</label>
                 <div class="input">
                     <div class="dv"><DatePicker ref="datepicker" :dayOpionType=state.dayOpionType  @selectDay ="selectDay" :optionsType="true"/></div>
                 </div>
             </div>
+             <div class="item" >
+                    <label>서버 선택</label>
+                    <div class="input">
+                        <div class="dv">
+                            <select class="custom-select" style="width:360px;" placeholder="서버를 선택하세요" v-model="state.groupname">
+                                <option value="" disabled>서버를 선택하세요</option>
+                                <option value="1">운영서버</option>
+                                <option value="2">개발서버</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
             <div class="item">
                 <label>키워드 검색</label>
                 <div class="input">
