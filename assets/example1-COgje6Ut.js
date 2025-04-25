@@ -1,4 +1,4 @@
-import{r as C,g as a,e as n,f as e,x as o,t as c,F as b,j as f,n as i}from"./index-x_09ieHX.js";const v={class:"guidecontent"},k={class:"guidetitle"},S=["onClick"],_=["onClick"],T={__name:"example1",props:{sampleProps:{type:Object,default:()=>{}}},setup(p){const m=C({className:"",codeSample:[{title:"HTML",sampleCodeJS:`<default-modal :is-show="true" :modal-title="'알림'" :button-confirm="'확인'" :button-cancel="'취소'" :modal-name="'modalAlert'" @modalclose="modalClose">
+import{r as C,g as a,e as n,f as e,x as o,t as c,F as b,j as f,n as i}from"./index-BY0_TgGp.js";const v={class:"guidecontent"},k={class:"guidetitle"},S=["onClick"],_=["onClick"],T={__name:"example1",props:{sampleProps:{type:Object,default:()=>{}}},setup(p){const m=C({className:"",codeSample:[{title:"HTML",sampleCodeJS:`<default-modal :is-show="true" :modal-title="'알림'" :button-confirm="'확인'" :button-cancel="'취소'" :modal-name="'modalAlert'" @modalclose="modalClose">
     <template #modalcontent>
         <component :is="markRaw(sample)"  /> || 직접 태그 작성
     </template>
