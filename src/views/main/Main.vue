@@ -257,7 +257,7 @@ const state = reactive({
     ],
     rowData: [
         {
-            groupname: KCOPUBWIFO1000200030050403450',
+            groupname: 'KCOPUBWIFO 1000200030050403450',
             prname: 'UBW_1KIWS00215',
             prename: '정상',
             prtype: '',
@@ -268,7 +268,7 @@ const state = reactive({
             date: '2023.04.12 13:22:14'
         },
         {
-            groupname: KCOPUBWIFO000200030050403450',
+            groupname: 'KCOPUBWIFO 000200030050403450',
             prname: 'UBW_1KIWS00215',
             prename: '정상',
             prtype: '',
@@ -279,7 +279,7 @@ const state = reactive({
             date: '2023.04.12 13:22:14'
         },
         {
-            groupname: KCOPUBWIFO1000200030050403450',
+            groupname: 'KCOPUBWIFO 1000200030050403450',
             prname: 'UBW_1KIWS00215',
             prename: '정상',
             prtype: '',
