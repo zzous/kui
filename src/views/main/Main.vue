@@ -37,13 +37,13 @@
                 <div class="item">
                     <label>인터페이스ID</label>
                     <div class="input">
-                        <div class="dv"><input type="text" class="form-control" placeholder="표준글로벌ID" style="width:250px;background:#fff"/></div>
+                        <div class="dv"><input type="text" class="form-control" placeholder="인터페이스ID" style="width:250px;background:#fff"/></div>
                     </div>
                 </div>
                 <div class="item">
                     <label>고객번호</label>
                     <div class="input">
-                        <div class="dv"><input type="text" class="form-control" placeholder="표준글로벌ID" style="width:250px;background:#fff"/></div>
+                        <div class="dv"><input type="text" class="form-control" placeholder="고객번호" style="width:250px;background:#fff"/></div>
                     </div>
                 </div>
             </div>
