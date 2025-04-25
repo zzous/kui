@@ -38,10 +38,10 @@ const props = defineProps({
 })
 const state = reactive({
     menuList:[
-        // {label:'서비스관리', submenu:[], link:''},
-        {label:'빌드/배포 관리', submenu:[
-            {label:'프로젝트 관리', submenu:[],link:'/main'},
-            {label:'빌드 이력', submenu:[],link:'/buildlist'},
+        // {label:'로그 관리', submenu:[], link:''},
+        {label:'로그 관리', submenu:[
+            {label:'거래 로그 조회', submenu:[],link:'/main'},
+            {label:'전문 관리', submenu:[],link:'/buildlist'},
             // {label:'배포 목록',submenu:[],link:''},
             // {label:'Pass Potal', submenu:[],link:''},
         ], link:''},
