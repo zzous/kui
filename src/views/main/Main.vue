@@ -264,7 +264,7 @@ const state = reactive({
             description: 'KCI',
             register: '',
             log: '4',
-            time: 00:00:02:870,
+            time: '00:00:02:87',
             date: '2023.04.12 13:22:14'
         },
         {
@@ -275,7 +275,7 @@ const state = reactive({
             description: 'KCI',
             register: '',
             log: '4',
-            time: 00:00:02:870,
+            time: '00:00:02:87',
             date: '2023.04.12 13:22:14'
         },
         {
@@ -286,7 +286,7 @@ const state = reactive({
             description: 'KCI',
             register: '',
             log: '4',
-            time: 00:00:02:870,
+            time: '00:00:02:87',
             date: '2023.04.12 13:22:14'
         },
     ],
