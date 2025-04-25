@@ -5,7 +5,7 @@ const main = [
         component: () => import('@/views/main/Main.vue'),
         meta: {
             unauthorized: true,
-            sublocation_depth: ['빌드/배포관리', '프로젝트 관리']
+            sublocation_depth: ['로그관리', '거래로그 조회']
         }
     },
     {
@@ -13,7 +13,7 @@ const main = [
         name: 'mainview',
         meta: {
             unauthorized: true,
-            sublocation_depth: ['빌드/배포관리', '프로젝트 상세'],
+            sublocation_depth: ['로그관리', '거래로그 상세'],
         },
         
         component: () => import('@/views/main/MainView.vue'),
