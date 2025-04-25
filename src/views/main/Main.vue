@@ -29,23 +29,23 @@
                 <div class="item">
                     <label>GUID</label>
                     <div class="input">
-                        <div class="dv"><input type="text" class="form-control" placeholder="표준글로벌ID" style="width:250px;"/></div>
+                        <div class="dv"><input type="text" class="form-control" placeholder="표준글로벌ID" style="width:250px; background:#fff"/></div>
                     </div>
                 </div>
                 <div class="item">
                     <label>인터페이스ID</label>
                     <div class="input">
-                        <div class="dv"><input type="text" class="form-control" placeholder="표준글로벌ID" style="width:250px;"/></div>
+                        <div class="dv"><input type="text" class="form-control" placeholder="표준글로벌ID" style="width:250px;background:#fff"/></div>
                     </div>
                 </div>
                 <div class="item">
                     <label>고객번호</label>
                     <div class="input">
-                        <div class="dv"><input type="text" class="form-control" placeholder="표준글로벌ID" style="width:250px;"/></div>
+                        <div class="dv"><input type="text" class="form-control" placeholder="표준글로벌ID" style="width:250px;background:#fff"/></div>
                     </div>
                 </div>
             </div>
-            <div class="item  w-100" style="margin-left:0;margin-left:0;background:#eee;padding:20px 10px 10px 10px; border:soloid 1px #999">
+            <div class="item  w-100" style="margin-left:0;margin-left:0;background:#eee;padding:20px 10px 10px 10px; border-top:solid 1px #999">
                 <div class="item">
                     <label>연계구분</label>
                     <div class="input">
@@ -208,10 +208,8 @@ const state = reactive({
     modalType:false,
     value: [
         { headerCheckboxSelection: true, checkboxSelection: true, maxWidth: 30 },
-        { headerName: '서비스 그룹명',  field: 'groupname',  maxWidth: 120,
-           
-        },
-        { headerName: '프로젝트 명',  field: 'prname', flex: 1,
+        { headerName: 'GUID',  field: 'groupname',   flex: 1 },
+        { headerName: '인터페이스 ID',  field: 'prname',maxWidth: 120,
             cellRenderer: (params) => {
                 const tagString = `<div id="prname-${params.node.rowIndex}"><a href="javascript:void(0)" class="link">${params.data.prname}</a></div>`;
                 const tagTarget = document.createElement('div');
@@ -224,64 +222,69 @@ const state = reactive({
                 return tagTarget;
             }
         },
-        { headerName: '프로젝트 영문명',  field: 'prenname', flex: 1, suppressSizeToFit: true },
-        { headerName: '프로젝트 유형',  field: 'prtype',  flex:1},
-        { headerName: '설명',  field: 'description', flex: 1 },
-        { headerName: '등록자',  field: 'register', flex: 1 },
-        { headerName: '등록일',  field: 'date', flex: 1 },
-        { headerName: 'Git Url',  field: 'url', flex: 1 , 
-            cellRenderer: (params) => {
-                const tagString = `<div id="url-${params.node.rowIndex}"><button type="button" class="btn btn-ss">복사</button></div>`;
-                const tagTarget = document.createElement('div');
-                tagTarget.innerHTML = tagString;
-                const buttonEventTarget = tagTarget.querySelector(`#url-${params.node.rowIndex}`);
-                buttonEventTarget.addEventListener('click', (event) => {
-                    console.log(params.data.url);
-                    $Modal.simple({
-                        message: `${params.data.url} 이 복사 되었습니다.`,
-                        type: 'modalAlert',
-                        closeButtonHide: true,
-                        className:'confirm',
-                        buttonText: {
-                            ok: '확인',
-                            cancel: '취소',
-                        }
-                    })
+        { headerName: '거래상태',  field: 'prenname', flex: 1, suppressSizeToFit: true },
+        { headerName: '원거래 GUID',  field: 'prtype',  flex:1},
+        { headerName: '연계구분',  field: 'description', flex: 1 },
+        { headerName: '고객번호',  field: 'register', flex: 1 },
+        { headerName: '로그수',  field: 'log', flex: 1 },
+        { headerName: '처리시간',  field: 'time', flex: 1 },
+        { headerName: '거래일시',  field: 'date', flex: 1 },
+        // { headerName: 'Git Url',  field: 'url', flex: 1 , 
+        //     cellRenderer: (params) => {
+        //         const tagString = `<div id="url-${params.node.rowIndex}"><button type="button" class="btn btn-ss">복사</button></div>`;
+        //         const tagTarget = document.createElement('div');
+        //         tagTarget.innerHTML = tagString;
+        //         const buttonEventTarget = tagTarget.querySelector(`#url-${params.node.rowIndex}`);
+        //         buttonEventTarget.addEventListener('click', (event) => {
+        //             console.log(params.data.url);
+        //             $Modal.simple({
+        //                 message: `${params.data.url} 이 복사 되었습니다.`,
+        //                 type: 'modalAlert',
+        //                 closeButtonHide: true,
+        //                 className:'confirm',
+        //                 buttonText: {
+        //                     ok: '확인',
+        //                     cancel: '취소',
+        //                 }
+        //             })
                 
-                });
-                return tagTarget;
-            }
-        },
+        //         });
+        //         return tagTarget;
+        //     }
+        // },
     ],
     rowData: [
         {
-            groupname: 'AlHub',
-            prname: '스프링부트 메이븐 2',
-            prename: 'springboot-maven-2',
-            prtype: 'springboot Basic',
-            description: 'springboot-maven',
-            register: '김용국',
-            url: 'ds:///vmfs/volumes/644b6776-36b209...',
+            groupname: KCOPUBWIFO 1000200030050403450',
+            prname: 'UBW_1KIWS00215',
+            prename: '정상',
+            prtype: '',
+            description: 'KCI',
+            register: '',
+            log: '4',
+            time: 00:00:02:870,
             date: '2023.04.12 13:22:14'
         },
         {
-            groupname: 'AlHub',
-            prname: '스프링부트 메이븐 2',
-            prename: 'springboot-maven-2',
-            prtype: 'springboot Basic',
-            description: 'springboot-maven',
-            register: '김용국',
-            url: 'ds:///vmfs/volumes/644b6776-36b209...',
+            groupname: KCOPUBWIFO 1000200030050403450',
+            prname: 'UBW_1KIWS00215',
+            prename: '정상',
+            prtype: '',
+            description: 'KCI',
+            register: '',
+            log: '4',
+            time: 00:00:02:870,
             date: '2023.04.12 13:22:14'
         },
         {
-            groupname: 'AlHub',
-            prname: '스프링부트 메이븐 2',
-            prename: 'springboot-maven-2',
-            prtype: 'springboot Basic',
-            description: 'springboot-maven',
-            register: '김용국',
-            url: 'ds:///vmfs/volumes/644b6776-36b209...',
+            groupname: KCOPUBWIFO 1000200030050403450',
+            prname: 'UBW_1KIWS00215',
+            prename: '정상',
+            prtype: '',
+            description: 'KCI',
+            register: '',
+            log: '4',
+            time: 00:00:02:870,
             date: '2023.04.12 13:22:14'
         },
     ],
