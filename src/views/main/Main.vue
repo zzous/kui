@@ -13,19 +13,21 @@
                     <div class="dv"><DatePicker ref="datepicker" :dayOpionType=state.dayOpionType  @selectDay ="selectDay" :optionsType="true"/></div>
                 </div>
             </div>
-             <div class="item" >
-                <label>서버 선택</label>
-                <div class="input">
-                    <div class="dv">
-                        <select class="custom-select" style="width:250px;" placeholder="서버를 선택하세요">
-                            <option value="" disabled>서버를 선택하세요</option>
-                            <option value="1">운영서버</option>
-                            <option value="2">개발서버</option>
-                        </select>
+            <div class="item mt-5 w-100" style="margin-left:0;background:#eee;padding:10px;">
+                 <div class="item" >
+                    <label>서버 선택</label>
+                    <div class="input">
+                        <div class="dv">
+                            <select class="custom-select" style="width:250px;" placeholder="서버를 선택하세요">
+                                <option value="" disabled>서버를 선택하세요</option>
+                                <option value="1">운영서버</option>
+                                <option value="2">개발서버</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="item mt-5 w-100" style="margin-left:0;background:#eee;padding:10px;">
+            <div class="item mt-5 w-100" style="margin-left:0;background:#eee;padding:20px 10px 10px 10px; border-top:solid 1px #666">
                 <div class="item">
                     <label>GUID</label>
                     <div class="input">
@@ -45,7 +47,7 @@
                     </div>
                 </div>
             </div>
-            <div class="item  w-100" style="margin-left:0;margin-left:0;background:#eee;padding:20px 10px 10px 10px; border-top:solid 1px #666">
+            <div class="item  w-100" style="margin-left:0;background:#eee;padding:20px 10px 10px 10px; border-top:solid 1px #666">
                 <div class="item">
                     <label>연계구분</label>
                     <div class="input">
