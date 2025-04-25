@@ -7,7 +7,7 @@
     
     <SearchBox @onSearchResult="onSearchResult" @onReload="onReload">
         <template #formItem>
-            <div class="item"v-if="false">
+            <div class="item">
                 <label>기간조회</label>
                 <div class="input">
                     <div class="dv"><DatePicker ref="datepicker" :dayOpionType=state.dayOpionType  @selectDay ="selectDay" :optionsType="true"/></div>
