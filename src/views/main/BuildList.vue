@@ -13,6 +13,13 @@
 
     전문 이력 조회 검색 항목 기간 조회  전문ID 결과코드 
     전문 이력 목록 헤더 NO, 전문ID, 전달일시, 결과코드,
+    전문 이력 상세 전문 ID, 결과 코드, 전송IP, 송신IP, 요청BODY, 응답내용 (입력)
+
+    전문 조회 
+    검색 항목 전문ID, 전문 설명, 등록자, 인터페이스ID
+    버튼 전문 업로드, 출력전문 업로드, 전문 다운로드, 출력 전문 다운로드, 삭제, 업무 코드 등록
+    전문 조회 리스트  헤더 전문 ID, 버전,전문설명, 업무코드, 등록자, 등록일, 항목수
+    
     <SearchBox @onSearchResult="onSearchResult" @onReload="onReload">
         <template #formItem>
             <div class="item">
