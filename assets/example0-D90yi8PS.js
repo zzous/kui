@@ -1,4 +1,4 @@
-import{r as f,g as a,e as r,f as e,x as i,t as n,F as v,j as C,n as p}from"./index-DnUFGrOX.js";const S={class:"guidecontent"},b={class:"guidetitle"},y=["onClick"],L=["onClick"],k={__name:"example0",props:{sampleProps:{type:Object,default:()=>{}}},setup(u){const l=f({className:"",codeSample:[{title:"HTML",sampleCodeJS:`<template>
+import{r as f,g as a,e as r,f as e,x as i,t as n,F as v,j as C,n as p}from"./index-NgLGnAmP.js";const S={class:"guidecontent"},b={class:"guidetitle"},y=["onClick"],L=["onClick"],k={__name:"example0",props:{sampleProps:{type:Object,default:()=>{}}},setup(u){const l=f({className:"",codeSample:[{title:"HTML",sampleCodeJS:`<template>
     <div>
         페이지 내용
     </div>
