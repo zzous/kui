@@ -9,6 +9,7 @@
                 class="form-control" 
                 :placeholder="inputPlaceholder"
                 :value="modelValue"
+                :readonly="readonly"
                 @input="$emit('update:modelValue', $event.target.value)"
             >
         </div>
@@ -27,7 +28,9 @@ const props = defineProps({
     labelText: String,
     modelValue: String,
     errorMessages: Array,
-    inputSize: String
+    inputSize: String,
+    readonly: Boolean, 
+    disabled: Boolean,
 });
 
 // v-model 업데이트를 위한 이벤트 추가

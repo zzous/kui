@@ -4,21 +4,8 @@
         <v-btn @click="openSample">샘플페이지 이동</v-btn>
         <v-btn @click="openModal">모달열기</v-btn>
     </div> -->
-    로그 레벨 조회 검색 항목 이름: 인풋, 적용 레벨, 셀렉트(전체)
-    로그레벨 목록  헤더 : no, 이름, 적용 레벨, 환경 레벨
-    1, root, info, info
-    2. JdbCallLogging, info
-    3. TRACE,TRACE,TRACE
-    상세 전체 수정 가능
+  
 
-    전문 이력 조회 검색 항목 기간 조회  전문ID 결과코드 
-    전문 이력 목록 헤더 NO, 전문ID, 전달일시, 결과코드,
-    전문 이력 상세 전문 ID, 결과 코드, 전송IP, 송신IP, 요청BODY, 응답내용 (입력)
-
-    전문 조회 
-    검색 항목 전문ID, 전문 설명, 등록자, 인터페이스ID
-    버튼 전문 업로드, 출력전문 업로드, 전문 다운로드, 출력 전문 다운로드, 삭제, 업무 코드 등록
-    전문 조회 리스트  헤더 전문 ID, 버전,전문설명, 업무코드, 등록자, 등록일, 항목수
     
     <SearchBox @onSearchResult="onSearchResult" @onReload="onReload">
         <template #formItem>
@@ -29,38 +16,25 @@
                 </div>
             </div>
             
-            <div class="item mt-5 w-100" style="margin-left:0">
+            <div class="item mt-5 w-100" style="margin-left:0;background:#eee;padding:20px;">
                 <div class="item">
                     <label>전문ID</label>
                     <div class="input">
-                        <div class="dv"><input type="text" class="form-control" placeholder="전문 ID를 검색 하세요" style="width:200px;"/></div>
+                        <div class="dv"><input type="text" class="form-control" placeholder="전문 ID를 검색 하세요" style="width:200px;background:#fff"/></div>
                     </div>
                 </div>
                 <div class="item">
                     <label>결과코드</label>
                     <div class="input">
-                        <div class="dv"><input type="text" class="form-control" placeholder="결과코드를 검색 하세요" style="width:200px;"/></div>
+                        <div class="dv"><input type="text" class="form-control" placeholder="결과코드를 검색 하세요" style="width:200px;background:#fff"/></div>
                     </div>
                 </div>
-                <div class="item" v-if="false">
-                    <label>서비스 그룹명</label>
+                <div class="item" >
+                    <label>등록자</label>
                     <div class="input">
                         <div class="dv">
-                            <select class="custom-select" style="width:360px;" placeholder="서비스 그룹명을 선택 하세요" v-model="state.groupname">
-                                <option value="" disabled>서비스 그룹명을 선택 하세요</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <div class="item"  v-if="false">
-                    <label>프로젝트 명</label>
-                    <div class="input">
-                        <div class="dv">
-                            <select class="custom-select" style="width:360px;" placeholder="프로젝트 명을 선택 하세요" v-model="state.prname">
-                                <option value="" disabled>프로젝트 명을 선택 하세요</option>
+                            <select class="custom-select" style="width:360px;" placeholder="등록자를 선택 하세요" v-model="state.groupname">
+                                <option value="" disabled>등록자를 선택 하세요</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -83,7 +57,7 @@
         :itemCount="pager.totalCnt" 
         :currentPage="pager.current" 
         :downParams ="'downParams'"
-        :regbuttonName="'생성'"
+        :regbuttonName="'전문 업로드'"
         :deletebuttonName="'삭제'"
         @changedPage="onChangedPage" 
         @onRegister="onRegister"
@@ -124,6 +98,7 @@ const state = reactive({
     pagesize: 10,
     modalType:false,
     value: [
+        { headerName: '번호', valueGetter: 'node.rowIndex + 1',  maxWidth: 80 },
         { headerCheckboxSelection: true, checkboxSelection: true, maxWidth: 30 },
         // { headerName: '전문ID',  field: 'groupname',  maxWidth: 120 },
         { headerName: '전문ID',  field: 'prname', flex: 1,
@@ -133,15 +108,19 @@ const state = reactive({
                 tagTarget.innerHTML = tagString;
                 const buttonEventTarget = tagTarget.querySelector(`#prname-${params.node.rowIndex}`);
                 buttonEventTarget.addEventListener('click', (event) => {
-                    goToPage('/main/mainview');
+                    goToPage('/builddetail?viewId=' + params.node.rowIndex);
                 
                 });
                 return tagTarget;
             }
         },
-        // { headerName: '빌드명',  field: 'prenname', flex: 1, suppressSizeToFit: true },
+        { headerName: '전달일시',  field: 'prenname', flex: 1, suppressSizeToFit: true },
         { headerName: '결과코드',  field: 'prtype',  flex:1},
-        { headerName: '전달 일시',  field: 'register', flex: 1 },
+        { headerName: '업무코드',  field: 'code',  flex:1},
+        { headerName: '등록자',  field: 'register',  flex:1},
+        { headerName: '등록일',  field: 'date',  flex:1},
+        
+        // { headerName: '전달 일시',  field: 'register', flex: 1 },
         // { headerName: '등록일',  field: 'date', flex: 1 },
         // { headerName: '빌드',  field: 'url', maxWidth: 100, 
         //     cellRenderer: (params) => {
@@ -170,12 +149,29 @@ const state = reactive({
         {
             
             prname: 'WCZ75A11751_I',
-            prenname: 'build-UCA-591',
-            prtype: 'build-UCA-591',
-            register: '김용국',
-            url: '',
-            date: '2023.04.12 13:22:14',
-            view:''
+            prenname: '2025-04-27 13:22:14',
+            register: '김국민',
+            date: '2025-04-27 13:22:14',
+            prtype: '200',
+            code: 'KB1010',
+        },
+        {
+            
+            prname: 'WCZ75A11751_I',
+            prenname: '2025-04-27 13:22:14',
+            register: '김국민',
+            date: '2025-04-27 13:22:14',
+            prtype: '200',
+            code: 'KB1010',
+        },
+        {
+            
+            prname: 'WCZ75A11751_I',
+            prenname: '2025-04-27 13:22:14',
+            register: '김국민',
+            date: '2025-04-27 13:22:14',
+            prtype: '200',
+            code: 'KB1010',
         },
         
     ],

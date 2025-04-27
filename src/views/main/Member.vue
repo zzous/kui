@@ -53,8 +53,8 @@
         </div>
         <div class="ui-section wp-70">
             <div class="ui-title-3">
-                <h3>조직상세정보</h3>
-                <span class="ml-20">좌측 트리영역에서 추가할 위치 선택 후, '추가'버튼 클릭 시 신규 메뉴 등록이 가능합니다.</span>
+                <h3>사용자상세정보</h3>
+                <span class="ml-20">좌측 트리영역에서 선택 시 상세 사용자 정보를 확인 할 수 있습니다.</span>
                 <div class="abs">
                     <span class="ess"></span> 표시는 필수항목입니다.
                 </div>
@@ -63,31 +63,45 @@
                 <div class="tbl-wrap mt-10">
                     <table class="table reg">
                         <colgroup>
-                            <col style="width: 120px;">
+                            <col style="width: 140px;">
                             <col style="width: auto;">
-                            <col style="width: 120px;">
+                            <col style="width: 140px;">
                             <col style="width: auto;">
                         </colgroup>
                         <tbody>
                             <tr>
                                 <th scope="row">상위조직ID</th>
-                                <td>
-                                    <div class="reg-group inline">
+                                <td colspan="3">
+                                    <div class="reg-group">
                                         <div class="reg-item">
                                             <input type="text" class="form-control" readonly="">
                                         </div>
                                     </div>
                                 </td>
-                                <th scope="row">조직ID</th>
-                                <td>
-                                    <div class="reg-group inline">
+                               
+                            </tr>
+                            <tr>
+                                <th scope="row">조직명</th>
+                                <td colspan="3">
+                                    <div class="reg-group">
+                                        <div class="reg-item">
+                                            <input type="text" class="form-control" readonly="">
+                                        </div>
+                                    </div>
+                                </td>
+                               
+                            </tr>
+                            <tr>
+                                <th scope="row">사용자ID</th>
+                                <td colspan="3">
+                                    <div class="reg-group">
                                         <div class="reg-item">
                                             <input type="text" class="form-control" readonly="">
                                         </div>
                                     </div>
                                 </td>
                             </tr>
-                            <tr>
+                            <!-- <tr>
                                 <th scope="row">조직명<span class="ess"><span class="offscreen">필수입력</span></span></th>
                                 <td colspan="3">
                                     <div class="reg-group">
@@ -96,24 +110,25 @@
                                         </div>
                                     </div>
                                 </td>
-                            </tr>
+                            </tr> -->
                             <tr>
                                 <th scope="row">조직설명</th>
                                 <td colspan="3">
                                     <div class="reg-group">
                                         <div class="reg-item">
-                                            <textarea id="textarea" class="form-control" style="height: 100px"></textarea>
+                                            <textarea id="textarea" class="form-control" style="height: 100px;width: 100%;"></textarea>
                                         </div>
                                     </div>
                                 </td>
                             </tr>
                             <tr>
-                                <th scope="row">사용여부<span class="ess"><span class="offscreen">필수입력</span></span></th>
+                                <th scope="row">사용자 권한<span class="ess"><span class="offscreen">필수입력</span></span></th>
                                 <td colspan="3">
                                     <div class="reg-group">
                                         <div class="reg-item sg">
                                             <select class="custom-select">
-                                                <option value="미사용" selected="">미사용</option>
+                                                <option value="미사용" selected="">manager</option>
+                                                <option value="사용" selected="">mastere</option>
                                             </select>
                                         </div>
                                     </div>

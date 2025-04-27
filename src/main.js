@@ -7,7 +7,7 @@ import { registerGlobals } from '@/_setting/globals'
 
 const app = createApp(App)
 // 전역 객체 등록
-registerGlobals()
+registerGlobals(app)
 // 플러그인 등록
 registerPlugins(app)
 // 라우터 등록

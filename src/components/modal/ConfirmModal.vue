@@ -51,23 +51,23 @@
 </template>
 <script setup>
 import { onMounted, onUnmounted, reactive } from 'vue';
-
+import eventBus from '@/_setting/emit/index';
 
 onMounted(() => {
-    emitter.$on('modalSimple', (v, passedPromise) => {
+    eventBus.on('modalSimple', (v, passedPromise) => {
         openModal('modalSimple', v, passedPromise);
     });
-    emitter.$on('modalAlert', (v, passedPromise) => {
+    eventBus.on('modalAlert', (v, passedPromise) => {
         openModal('modalAlert', v, passedPromise);
     });
-    emitter.$on('modalConfirm', (v, passedPromise) => {
+    eventBus.on('modalConfirm', (v, passedPromise) => {
         openModal('modalConfirm', v, passedPromise);
     });
 });
 onUnmounted(() => {
-    emitter.$off('modalSimple');
-    emitter.$off('modalAlert');
-    emitter.$off('modalConfirm');
+    eventBus.off('modalSimple');
+    eventBus.off('modalAlert');
+    eventBus.off('modalConfirm');
 });
 const state = reactive({
     type: null,

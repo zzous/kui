@@ -13,7 +13,7 @@
                     <div class="dv"><DatePicker ref="datepicker" :dayOpionType=state.dayOpionType  @selectDay ="selectDay" :optionsType="true"/></div>
                 </div>
             </div>
-            <div class="item mt-5 w-100" style="margin-left:0;background:#eee;padding:10px;">
+            <div class="item mt-5 w-100" style="margin-left:0;background:#eee;padding:20px;">
                  <div class="item" >
                     <label>서버 선택</label>
                     <div class="input">
@@ -27,7 +27,7 @@
                     </div>
                 </div>
             </div>
-            <div class="item w-100" style="margin-left:0;background:#eee;padding:20px 10px 10px 10px; border-top:solid 1px #666">
+            <div class="item w-100" style="margin-left:0;background:#eee;padding:20px;">
                 <div class="item">
                     <label>GUID</label>
                     <div class="input">
@@ -47,7 +47,7 @@
                     </div>
                 </div>
             </div>
-            <div class="item  w-100" style="margin-left:0;background:#eee;padding:20px 10px 10px 10px; border-top:solid 1px #666">
+            <div class="item  w-100" style="margin-left:0;background:#eee;padding:20px;">
                 <div class="item">
                     <label>연계구분</label>
                     <div class="input">
@@ -217,10 +217,10 @@ const state = reactive({
                 const tagTarget = document.createElement('div');
                 tagTarget.innerHTML = tagString;
                 const buttonEventTarget = tagTarget.querySelector(`#prname-${params.node.rowIndex}`);
-                buttonEventTarget.addEventListener('click', (event) => {
-                    goToPage('/main/mainview');
+                // buttonEventTarget.addEventListener('click', (event) => {
+                //     goToPage('/main/mainview');
                 
-                });
+                // });
                 return tagTarget;
             }
         },

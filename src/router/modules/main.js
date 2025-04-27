@@ -1,3 +1,8 @@
+const withPrefix = (prefix, routes) =>
+    routes.map((route) => {
+    route.path = prefix + route.path;
+    return route;
+});
 const main = [
     {
         path: '/main',
@@ -29,19 +34,59 @@ const main = [
         component: () => import('@/views/main/MainEdit.vue'),
     },
     {
+        path: '/loglevel',
+        meta: {
+            unauthorized: true,
+            sublocation_depth: ['로그관리', '로그레벨 조회'],
+        },
+        name: 'loglevel',
+        component: () => import('@/views/main/Sample.vue'),
+    },
+    ...withPrefix('/loglevelview', [
+        {
+            path: '/',
+            name: 'loglevelview',
+            component: () => import('@/views/main/SampleView.vue'),
+            meta: {
+                unauthorized: true,
+                sublocation_depth: ['로그관리', '로그레벨 상세'],
+            },
+            props: true
+        },
+        {
+            path: '/:viewId',
+            name: 'loglevelview-detail',
+            component: () => import('@/views/main/SampleView.vue'),
+            meta: {
+                unauthorized: true,
+                sublocation_depth: ['로그관리', '로그레벨 상세'],
+            },
+            props: true
+        }
+    ]),
+    {
         path: '/buildlist',
         meta: {
             unauthorized: true,
-            sublocation_depth: ['빌드/배포관리', '빌드 이력'],
+            sublocation_depth: ['전문관리', '전문이력조회'],
         },
         name: 'buildlist',
         component: () => import('@/views/main/BuildList.vue'),
     },
     {
+        path: '/builddetail',
+        meta: {
+            unauthorized: true,
+            sublocation_depth: ['전문관리', '전문이력상세'],
+        },
+        name: 'builddetail',
+        component: () => import('@/views/main/BuildForm.vue'),
+    },
+    {
         path: '/authmanage',
         meta: {
             unauthorized: true,
-            sublocation_depth: ['권한관리'],
+            sublocation_depth: ['메뉴권한관리'],
         },
         name: 'authmanage',
         component: () => import('@/views/main/AuthManage.vue'),

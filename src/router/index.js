@@ -10,30 +10,30 @@ const routes = [
         redirect: '/main',
         name: 'main',
         component: () => import('@/components/layout/Index.vue'),
-        // children: [
-        //     ...main,
-        // ]
+        children: [
+            ...main,
+        ]
     },
-    // {
-    //     path: '/login',
-    //     name: 'login',
-    //     component: () => import('@/views/login/Login.vue'),
-    // },
-    // {
-    //     path: '/member-join',
-    //     name: 'member-join',
-    //     component: () => import('@/views/login/MemberJoin.vue'),
-    // },
-    // {
-    //     path: '/change-pass',
-    //     name: 'change-pass',
-    //     component: () => import('@/views/login/ChangePass.vue'),
-    // },
-    // {
-    //     path: '/sample',
-    //     name: 'sample',
-    //     component: () => import('@/views/sample/Sample.vue'),
-    // },
+    {
+        path: '/login',
+        name: 'login',
+        component: () => import('@/views/login/Login.vue'),
+    },
+    {
+        path: '/member-join',
+        name: 'member-join',
+        component: () => import('@/views/login/MemberJoin.vue'),
+    },
+    {
+        path: '/change-pass',
+        name: 'change-pass',
+        component: () => import('@/views/login/ChangePass.vue'),
+    },
+    {
+        path: '/sample',
+        name: 'sample',
+        component: () => import('@/views/sample/Sample.vue'),
+    },
 ];
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
