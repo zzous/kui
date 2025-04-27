@@ -1172,7 +1172,7 @@ caption,
 }
 .ui-data-filter .form-item{align-items: flex-start; flex-wrap: wrap;}
 .ui-data-filter .form-item .item{align-items: flex-start;}
-.ui-data-filter .form-item .item>label{margin-top: 6px;}
+.ui-data-filter .form-item .item>label{margin-top: 6px; min-width:60px}
 .ui-data-filter.no-line {
   padding: 0;
   border: none;
