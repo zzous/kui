@@ -53,10 +53,10 @@ const state = reactive({
         {label:'메뉴권한관리', submenu:[], link:'authmanage'},
         // {label:'사용자권한관리', submenu:[], link:'authmanage'},
         {label:'사용자관리', submenu:[], link:'/orgmanage'},
-        // {label:'공지사항', submenu:[
-        //     {label:'공지사항', link:'/notice', submenu:[]   },
-        //     {label:'FAQ', link:'/faq', submenu:[]},
-        // ], link:''},
+        {label:'공지사항', submenu:[
+            {label:'공지사항', link:'/notice', submenu:[]   },
+            {label:'FAQ', link:'/faq', submenu:[]},
+        ], link:''},
         {label:'로그인', submenu:[], link:'/login'},
         {label:'회원가입', submenu:[], link:'/member-join'},
         {label:'비밀번호 변경', submenu:[], link:'/change-pass'},

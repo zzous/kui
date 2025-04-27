@@ -1170,7 +1170,7 @@ caption,
   border: 1px solid var(--base-bd-color);
   border-radius: 3px;
 }
-.ui-data-filter .form-item{align-items: flex-start; flex-wrap: wrap;}
+.ui-data-filter .form-item{align-items: flex-start; flex-wrap: wrap; width: 100%;}
 .ui-data-filter .form-item .item{align-items: flex-start;}
 .ui-data-filter .form-item .item>label{margin-top: 6px; min-width:60px}
 .ui-data-filter.no-line {
