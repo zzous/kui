@@ -1,8 +1,8 @@
 <template>
     <div id="adminNav">
         <button type="button" class="nav-toggle" @click="toggleNav"><span class="offscreen">메뉴숨기기</span></button>
-        <div class="admin-fav-wrap">
-            <div class="admin-fav-head">
+        <div class="admin-fav-wrap" v-if="false">
+            <div class="admin-fav-head" >
                 <ul class="util">
                     
                     <li class="setting"><strong>helpDesk:</strong> 시스템 운영부 조민기 과장(3466)</li>
@@ -14,6 +14,7 @@
         <div class="admin-nav-scroller">
             <div class="admin-menu-wrap">
                 <ul>
+                    <!-- {{ menuList }} -->
                     <li class="depth" v-for="(item, index) in menuList" :key="index">
                         <button type="button"
                             :class="['admin-menu-item dep1', { 'active': item.isActive }, { 'no-child': item.submenu.length == 0 }]"
