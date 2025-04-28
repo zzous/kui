@@ -14,21 +14,21 @@
         <div class="admin-nav-scroller">
             <div class="admin-menu-wrap">
                 <ul>
-                    <!-- {{ menuList }} -->
+                    {{ menuList }}
                     <li class="depth" v-for="(item, index) in menuList" :key="index">
                         <button type="button"
-                            :class="['admin-menu-item dep1', { 'active': item.isActive }, { 'no-child': item.submenu.length == 0 }]"
+                            :class="['admin-menu-item dep1', { 'active': item.isActive }, { 'no-child': item?.submenu?.length == 0 }]"
                             @click="gnbOpen(index)">
                             {{ item.label }}
                         </button>
-                        <ul class="depth2" v-if="item.submenu.length > 0">
+                        <ul class="depth2" v-if="item?.submenu?.length > 0">
                             <li v-for="(sub, i) in  item.submenu" :key="i">
                                 <button type="button"
-                                    :class="['admin-menu-item dep2', { 'active': sub.isActive }, { 'no-child': sub.submenu.length == 0 }]"
+                                    :class="['admin-menu-item dep2', { 'active': sub.isActive }, { 'no-child': sub?.submenu?.length == 0 }]"
                                     @click="gnbOpen(index, i)">
                                     {{ sub.label }}
                                 </button>
-                                <ul  class="depth3" v-if="sub.submenu.length > 0">
+                                <ul  class="depth3" v-if="sub?.submenu?.length > 0">
                                     <li v-for="(depth, idx) in  2 " :key="idx">
                                         <button type="button"
                                             :class="['admin-menu-item dep3', { 'active':depth.isActive }]"

@@ -6,7 +6,7 @@
                
                 <ul>
                     <li v-for="(item, index) in state.menuList" :key="index"> 
-                        <span  @click="menuClick(index)" :class="{'active': (state.menuActive == index)}">{{item.label}} {{ index }}</span>
+                        <span  @click="menuClick(index)" :class="{'active': (state.menuActive == index)}">{{item.label}}</span>
                         <ul v-if="item.submenu.length > 0">
                             <li v-for="(depth, i) in item.submenu" :key="i" > <span @click="menuClick(index, i)">{{depth.label}}</span></li>
                         </ul>
@@ -15,8 +15,7 @@
             </div>
         </div>
        
-        <div class="pageTabs">
-            <!-- {{ state.menuActive }} -->
+        <div class="pageTabs" v-if="state.pageTabs">
             <ul>
                 <li v-for="(item, index) in state.pageTabs" :key="index">
                     <button type="button" class="tab-m">{{item.label}}</button>
@@ -31,7 +30,7 @@
         <!-- <button type="button" class="nav-toggle" @click="toggleNav"><span class="offscreen">메뉴숨기기</span></button> -->
         
         <div id="adminContainer">
-            <MainMenu :menuList="state.menuList[state.activeNum]?.submenu" @gnbOpen="gnbOpen" v-if="state.activeMenu" />
+            <MainMenu :menuList="state.menuList[state.activeNum]?.submenu[state.submenuNum].submenu" @gnbOpen="gnbOpen" v-if="state.activeMenu" />
             <div class="contents">
                 <div>
                     <Location :locations="state.currentPage?.label" />
@@ -71,7 +70,10 @@ const state = reactive({
     menuList:[
         // {label:'로그 관리', submenu:[], link:''},
         {label:'로그 관리', submenu:[
-            {label:'거래 로그 조회', submenu:[],link:'/main'},
+            {label:'거래 로그 조회', submenu:[
+                {label:'거래 로그 조회', submenu:[],link:''},
+                {label:'거래 로그 조회1', submenu:[],link:''},
+            ],link:'/main'},
             {label:'로그레벨조회', submenu:[],link:'/loglevel'},
             // {label:'배포 목록',submenu:[],link:''},
             // {label:'Pass Potal', submenu:[],link:''},
@@ -139,7 +141,6 @@ const gnbOpen = (depth1, depth2, depth3) => {
 }
 const menuClick = (index, i) => {
     state.activeNum = index;
-    
    // 1depth 메뉴 클릭
    if (typeof i === 'undefined' || i === null) {
         const menuItem = state.menuList[index];
@@ -167,6 +168,11 @@ const menuClick = (index, i) => {
     const submenuItem = state.menuList[index]?.submenu[i];
     if (!submenuItem) return;
 
+    console.log('메뉴', submenuItem?.submenu.length)
+    if(submenuItem?.submenu.length > 0){
+        state.activeMenu = true
+        state.submenuNum =i
+    }else{state.activeMenu = false}
     if (!state.pageTabs.some(tab => tab.label === submenuItem.label)) {
         state.pageTabs.push(submenuItem);
     }
