@@ -313,6 +313,7 @@ watch(route, () => {
 .temp-section{margin-top:10px; min-width:auto;}
 .ui-data-filter{padding:10px}
 .ui-data-filter .form-item{display: block;}
+.contents > div{padding-right:10px;}
 /* .nav-hide #adminContainer{left:0} */
 </style>
 

@@ -18,7 +18,7 @@
                 <div class="item">
                     <label>이름</label>
                     <div class="input">
-                        <div class="dv"><input type="text" class="form-control" placeholder="이름을 검색 하세요" style="width:200px;background:#fff"/></div>
+                        <div class="dv"><input type="text" class="form-control" placeholder="이름을 검색 하세요" style="width:150px;background:#fff"/></div>
                     </div>
                 </div>
                 <div class="item" >
