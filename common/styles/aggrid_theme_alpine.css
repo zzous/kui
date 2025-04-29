@@ -45,9 +45,9 @@
     --ag-header-column-resize-handle-height: 30%;
     --ag-grid-size: 6px;
     --ag-icon-size: 12px;
-    --ag-row-height: calc(var(--ag-grid-size) * 4);
+    --ag-row-height: calc(var(--ag-grid-size) * 5);
     --ag-header-height: calc(var(--ag-grid-size) * 5);
-    --ag-list-item-height: calc(var(--ag-grid-size) * 4);
+    --ag-list-item-height: calc(var(--ag-grid-size) * 5);
     --ag-column-select-indent-size: var(--ag-icon-size);
     --ag-set-filter-indent-size: var(--ag-icon-size);
     --ag-cell-horizontal-padding: calc(var(--ag-grid-size) * 3);
