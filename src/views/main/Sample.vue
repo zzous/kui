@@ -14,8 +14,7 @@
                     <div class="dv"><DatePicker ref="datepicker" :dayOpionType=state.dayOpionType  @selectDay ="selectDay" :optionsType="true"/></div>
                 </div>
             </div>
-            
-            <div class="item mt-5 w-100" style="margin-left:0;background:#eee;padding:20px;">
+            <div class="ui-data-filter-more">
                 <div class="item">
                     <label>이름</label>
                     <div class="input">
@@ -112,6 +111,78 @@ const state = reactive({
         { headerName: '등록일시 ',  field: 'date', flex: 1 }
     ],
     rowData: [
+        {
+            
+            prname: 'ROOT',
+            prenname: 'INFO',
+            prtype: 'INFO',
+            register: 'INFO',
+            date: '2025-04-27 13:22:14',
+        },
+        {
+            
+            prname: 'JdbCallLogging',
+            prenname: 'INFO',
+            prtype: 'INFO',
+            register: 'INFO',
+            date: '2025-04-27 13:22:14',
+        },
+        {
+            
+            prname: 'TRACE',
+            prenname: 'TRACE',
+            prtype: 'TRACE',
+            register: 'TRACE',
+            date: '2025-04-27 13:22:14',
+        },
+        {
+            
+            prname: 'ROOT',
+            prenname: 'INFO',
+            prtype: 'INFO',
+            register: 'INFO',
+            date: '2025-04-27 13:22:14',
+        },
+        {
+            
+            prname: 'JdbCallLogging',
+            prenname: 'INFO',
+            prtype: 'INFO',
+            register: 'INFO',
+            date: '2025-04-27 13:22:14',
+        },
+        {
+            
+            prname: 'TRACE',
+            prenname: 'TRACE',
+            prtype: 'TRACE',
+            register: 'TRACE',
+            date: '2025-04-27 13:22:14',
+        },
+        {
+            
+            prname: 'ROOT',
+            prenname: 'INFO',
+            prtype: 'INFO',
+            register: 'INFO',
+            date: '2025-04-27 13:22:14',
+        },
+        {
+            
+            prname: 'JdbCallLogging',
+            prenname: 'INFO',
+            prtype: 'INFO',
+            register: 'INFO',
+            date: '2025-04-27 13:22:14',
+        },
+        {
+            
+            prname: 'TRACE',
+            prenname: 'TRACE',
+            prtype: 'TRACE',
+            register: 'TRACE',
+            date: '2025-04-27 13:22:14',
+        },
         {
             
             prname: 'ROOT',

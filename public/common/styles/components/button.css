@@ -92,10 +92,10 @@
 
 .btn-sm {
   padding: 0px 10px;
-  height: 30px;
+  height: 23px;
   border-color: #444;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 12px;
   color: #444;
 }
 
@@ -110,10 +110,10 @@
 
 .btn-sm [class*='ico-'] {
   display: block;
-  width: 20px;
-  height: 20px;
+  width: 15px;
+  height: 15px;
   margin-right: 4px;
-  background-size: 20px 20px;
+  background-size: 15px 15px;
   background-position: 50% 50%;
 }
 
@@ -158,11 +158,11 @@
 }
 
 .btn-ss {
-  padding: 0px 10px;
-  height: 28px;
+  padding: 0px 5px;
+  height: 24px;
   border-color: #767676;
   font-weight: 500;
-  font-size: 13px;
+  font-size: 12px;
   color: #444;
 }
 
@@ -202,10 +202,10 @@
 }
 
 .btn-opt {
-  height: 28px;
-  padding: 0 8px;
+  height: 24px;
+  padding: 0 4px;
   border-color: var(--base-bd-color);
-  font-size: 13px;
+  font-size: 12px;
   color: #767676;
   background-position: 50% 50%;
   background-repeat: no-repeat;
