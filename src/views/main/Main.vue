@@ -13,12 +13,12 @@
                     <div class="dv"><DatePicker ref="datepicker" :dayOpionType=state.dayOpionType  @selectDay ="selectDay" :optionsType="true"/></div>
                 </div>
             </div>
-            <div class="item mt-5 w-100" style="margin-left:0;background:#eee;padding:20px;">
+            <div class="ui-data-filter-more">
                  <div class="item" >
                     <label>서버 선택</label>
                     <div class="input">
                         <div class="dv">
-                            <select class="custom-select" style="width:250px;" placeholder="서버를 선택하세요">
+                            <select class="custom-select" style="width:150px;" placeholder="서버를 선택하세요">
                                 <option value="" disabled>서버를 선택하세요</option>
                                 <option value="1">운영서버</option>
                                 <option value="2">개발서버</option>
@@ -26,33 +26,29 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="item w-100" style="margin-left:0;background:#eee;padding:20px;">
                 <div class="item">
                     <label>GUID</label>
                     <div class="input">
-                        <div class="dv"><input type="text" class="form-control" placeholder="표준글로벌ID" style="width:250px; background:#fff"/></div>
+                        <div class="dv"><input type="text" class="form-control" placeholder="표준글로벌ID" style="width:150px; background:#fff"/></div>
                     </div>
                 </div>
                 <div class="item">
                     <label>인터페이스ID</label>
                     <div class="input">
-                        <div class="dv"><input type="text" class="form-control" placeholder="UBW_1KIWS00215" style="width:250px;background:#fff"/></div>
+                        <div class="dv"><input type="text" class="form-control" placeholder="UBW_1KIWS00215" style="width:150px;background:#fff"/></div>
                     </div>
                 </div>
                 <div class="item">
                     <label>고객번호</label>
                     <div class="input">
-                        <div class="dv"><input type="text" class="form-control" placeholder="고객번호" style="width:250px;background:#fff"/></div>
+                        <div class="dv"><input type="text" class="form-control" placeholder="고객번호" style="width:150px;background:#fff"/></div>
                     </div>
                 </div>
-            </div>
-            <div class="item  w-100" style="margin-left:0;background:#eee;padding:20px;">
                 <div class="item">
                     <label>연계구분</label>
                     <div class="input">
                         <div class="dv">
-                            <select class="custom-select" style="width:250px;" placeholder="전체" >
+                            <select class="custom-select" style="width:150px;" placeholder="전체" >
                                 <option value="" disabled>전체</option>
                                 <option value="1">Type1</option>
                                 <option value="2">Type2</option>
@@ -60,11 +56,14 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="ui-data-filter-more">
+                
                 <div class="item">
                     <label>거래상태</label>
                     <div class="input">
                         <div class="dv">
-                            <select class="custom-select" style="width:250px;" placeholder="전체" >
+                            <select class="custom-select" style="width:150px;" placeholder="전체" >
                                 <option value="" disabled>전체</option>
                                 <option value="1">Type1</option>
                                 <option value="2">Type2</option>
@@ -75,13 +74,13 @@
                 <div class="item">
                     <label>소스 APP</label>
                     <div class="input">
-                        <div class="dv"><input type="text" class="form-control" placeholder="소스APP" style="width:250px;" disabled/></div>
+                        <div class="dv"><input type="text" class="form-control" placeholder="소스APP" style="width:150px;" disabled/></div>
                     </div>
                 </div>
                 <div class="item">
                     <label>타켓 APP</label>
                     <div class="input">
-                        <div class="dv"><input type="text" class="form-control" placeholder="타켓 APP" style="width:250px;" disabled/></div>
+                        <div class="dv"><input type="text" class="form-control" placeholder="타켓 APP" style="width:150px;" disabled/></div>
                     </div>
                 </div>
             </div>
@@ -231,31 +230,173 @@ const state = reactive({
         { headerName: '로그수',  field: 'log', flex: 1 },
         { headerName: '처리시간',  field: 'time', flex: 1 },
         { headerName: '거래일시',  field: 'date', flex: 1 },
-        // { headerName: 'Git Url',  field: 'url', flex: 1 , 
-        //     cellRenderer: (params) => {
-        //         const tagString = `<div id="url-${params.node.rowIndex}"><button type="button" class="btn btn-ss">복사</button></div>`;
-        //         const tagTarget = document.createElement('div');
-        //         tagTarget.innerHTML = tagString;
-        //         const buttonEventTarget = tagTarget.querySelector(`#url-${params.node.rowIndex}`);
-        //         buttonEventTarget.addEventListener('click', (event) => {
-        //             console.log(params.data.url);
-        //             $Modal.simple({
-        //                 message: `${params.data.url} 이 복사 되었습니다.`,
-        //                 type: 'modalAlert',
-        //                 closeButtonHide: true,
-        //                 className:'confirm',
-        //                 buttonText: {
-        //                     ok: '확인',
-        //                     cancel: '취소',
-        //                 }
-        //             })
-                
-        //         });
-        //         return tagTarget;
-        //     }
-        // },
     ],
     rowData: [
+        {
+            groupname: 'KCOPUBWIFO 1000200030050403450',
+            prname: 'UBW_1KIWS00215',
+            prenname: '정상',
+            prtype: '',
+            description: 'KCI',
+            register: '',
+            log: '4',
+            time: '00:00:02:87',
+            date: '2023.04.12 13:22:14'
+        },
+        {
+            groupname: 'KCOPUBWIFO 000200030050403450',
+            prname: 'UBW_1KIWS00215',
+            prenname: '정상',
+            prtype: '',
+            description: 'KCI',
+            register: '',
+            log: '4',
+            time: '00:00:02:87',
+            date: '2023.04.12 13:22:14'
+        },
+        {
+            groupname: 'KCOPUBWIFO 1000200030050403450',
+            prname: 'UBW_1KIWS00215',
+            prenname: '정상',
+            prtype: '',
+            description: 'KCI',
+            register: '',
+            log: '4',
+            time: '00:00:02:87',
+            date: '2023.04.12 13:22:14'
+        },
+        {
+            groupname: 'KCOPUBWIFO 1000200030050403450',
+            prname: 'UBW_1KIWS00215',
+            prenname: '정상',
+            prtype: '',
+            description: 'KCI',
+            register: '',
+            log: '4',
+            time: '00:00:02:87',
+            date: '2023.04.12 13:22:14'
+        },
+        {
+            groupname: 'KCOPUBWIFO 000200030050403450',
+            prname: 'UBW_1KIWS00215',
+            prenname: '정상',
+            prtype: '',
+            description: 'KCI',
+            register: '',
+            log: '4',
+            time: '00:00:02:87',
+            date: '2023.04.12 13:22:14'
+        },
+        {
+            groupname: 'KCOPUBWIFO 1000200030050403450',
+            prname: 'UBW_1KIWS00215',
+            prenname: '정상',
+            prtype: '',
+            description: 'KCI',
+            register: '',
+            log: '4',
+            time: '00:00:02:87',
+            date: '2023.04.12 13:22:14'
+        },
+        {
+            groupname: 'KCOPUBWIFO 1000200030050403450',
+            prname: 'UBW_1KIWS00215',
+            prenname: '정상',
+            prtype: '',
+            description: 'KCI',
+            register: '',
+            log: '4',
+            time: '00:00:02:87',
+            date: '2023.04.12 13:22:14'
+        },
+        {
+            groupname: 'KCOPUBWIFO 000200030050403450',
+            prname: 'UBW_1KIWS00215',
+            prenname: '정상',
+            prtype: '',
+            description: 'KCI',
+            register: '',
+            log: '4',
+            time: '00:00:02:87',
+            date: '2023.04.12 13:22:14'
+        },
+        {
+            groupname: 'KCOPUBWIFO 1000200030050403450',
+            prname: 'UBW_1KIWS00215',
+            prenname: '정상',
+            prtype: '',
+            description: 'KCI',
+            register: '',
+            log: '4',
+            time: '00:00:02:87',
+            date: '2023.04.12 13:22:14'
+        },
+        {
+            groupname: 'KCOPUBWIFO 1000200030050403450',
+            prname: 'UBW_1KIWS00215',
+            prenname: '정상',
+            prtype: '',
+            description: 'KCI',
+            register: '',
+            log: '4',
+            time: '00:00:02:87',
+            date: '2023.04.12 13:22:14'
+        },
+        {
+            groupname: 'KCOPUBWIFO 000200030050403450',
+            prname: 'UBW_1KIWS00215',
+            prenname: '정상',
+            prtype: '',
+            description: 'KCI',
+            register: '',
+            log: '4',
+            time: '00:00:02:87',
+            date: '2023.04.12 13:22:14'
+        },
+        {
+            groupname: 'KCOPUBWIFO 1000200030050403450',
+            prname: 'UBW_1KIWS00215',
+            prenname: '정상',
+            prtype: '',
+            description: 'KCI',
+            register: '',
+            log: '4',
+            time: '00:00:02:87',
+            date: '2023.04.12 13:22:14'
+        },
+        {
+            groupname: 'KCOPUBWIFO 1000200030050403450',
+            prname: 'UBW_1KIWS00215',
+            prenname: '정상',
+            prtype: '',
+            description: 'KCI',
+            register: '',
+            log: '4',
+            time: '00:00:02:87',
+            date: '2023.04.12 13:22:14'
+        },
+        {
+            groupname: 'KCOPUBWIFO 000200030050403450',
+            prname: 'UBW_1KIWS00215',
+            prenname: '정상',
+            prtype: '',
+            description: 'KCI',
+            register: '',
+            log: '4',
+            time: '00:00:02:87',
+            date: '2023.04.12 13:22:14'
+        },
+        {
+            groupname: 'KCOPUBWIFO 1000200030050403450',
+            prname: 'UBW_1KIWS00215',
+            prenname: '정상',
+            prtype: '',
+            description: 'KCI',
+            register: '',
+            log: '4',
+            time: '00:00:02:87',
+            date: '2023.04.12 13:22:14'
+        },
         {
             groupname: 'KCOPUBWIFO 1000200030050403450',
             prname: 'UBW_1KIWS00215',
@@ -633,7 +774,7 @@ const pager = reactive({
     currentPageSize: 0,
     size: state.pagesize,
     offset: computed(() => (pager.current - 1) * pager.size),
-    totalCnt: 0
+    totalCnt: state.rowData.length
 });
 // const loadList = async () => {
 //     console.log('loadList');

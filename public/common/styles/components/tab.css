@@ -1,6 +1,6 @@
 .ui-tabs > ul {
     display: flex;
-    min-height: 40px;
+    min-height: 30px;
     border: 1px solid #d2d2d2;
     background-color: #fff;
     border-radius: 8px 8px 0 0;
@@ -33,10 +33,10 @@
 }
 .ui-tab-item {
     position: relative;
-    min-width: 120px;
-    min-height: 40px;
-    padding: 11px 20px;
-    font-size: 14px;
+    min-width: 100px;
+    min-height: 30px;
+    padding: 5px 10px;
+    font-size: 12px;
     font-weight: bold;
 }
 .ui-tabs > ul > li.active .ui-tab-item {

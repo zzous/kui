@@ -11,6 +11,7 @@
                 <span class="ico-download"></span>파일다운로드
               </button>
               <select class="custom-select sm" v-if="selected">
+                <option value="20개">20개</option>
                   <option value="10개">10개</option>
                   <option value="20개">20개</option>
                   <option value="30개">30개</option>

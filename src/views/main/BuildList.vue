@@ -16,7 +16,7 @@
                 </div>
             </div>
             
-            <div class="item mt-5 w-100" style="margin-left:0;background:#eee;padding:20px;">
+            <div class="ui-data-filter-more">
                 <div class="item">
                     <label>전문ID</label>
                     <div class="input">

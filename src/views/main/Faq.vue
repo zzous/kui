@@ -23,10 +23,12 @@
                                 <div class="dv"><DatePicker ref="datepicker" :dayOpionType=state.dayOpionType  @selectDay ="selectDay" :optionsType="true"/></div>
                             </div>
                         </div>
-                        <div class="item">
-                            <label>키워드 검색</label>
-                            <div class="input">
-                                <div class="dv"><input type="text" class="form-control" placeholder="키워드를 검색 하세요" style="width:360px;"/></div>
+                        <div class="ui-data-filter-more">
+                            <div class="item">
+                                <label>키워드 검색</label>
+                                <div class="input">
+                                    <div class="dv"><input type="text" class="form-control" placeholder="키워드를 검색 하세요" style="width:200px; background:#fff"/></div>
+                                </div>
                             </div>
                         </div>
                     </template>

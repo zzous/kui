@@ -1085,7 +1085,7 @@ caption,
 }
 
 .ui-title-2 h2 {
-  line-height: 32px;
+  line-height: 24px;
   font-size: 24px;
   font-weight: bold;
   color: #222;
@@ -1093,22 +1093,22 @@ caption,
 
 .ui-title-2 p {
   margin-top: 12px;
-  font-size: 18px;
+  font-size: 15px;
 }
 
 .ui-title-3 h3 {
-  font-size: 18px;
+  font-size: 15px;
   font-weight: bold;
   color: #222;
 }
 
 .ui-title-3 p {
-  margin-top: 12px;
-  font-size: 14px;
+  margin-top: 6px;
+  font-size: 13px;
 }
 
 .ui-title-4 h4 {
-  font-size: 16px;
+  font-size: 12px;
   font-weight: bold;
   color: #222;
 }
@@ -1141,16 +1141,16 @@ caption,
 
 .ui-modal .ui-title-2 h2 {
   line-height: 24px;
-  font-size: 18px;
+  font-size: 15px;
 }
 
 .ui-modal .ui-title-2 p {
   margin-top: 12px;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .ui-modal .ui-title-3 h3 {
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .ui-modal .ui-title-3 p {
@@ -1195,7 +1195,7 @@ caption,
   border-radius: 5px;
   display: flex;
 }
-
+.ui-data-filter-more + .ui-data-filter-more{margin-top:-1px; border-radius:0 0 5px 5px; }
 .ui-data-filter-more .form-item:first-of-type {
   margin-top: 0;
   padding-top: 0;

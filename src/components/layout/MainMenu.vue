@@ -14,7 +14,6 @@
         <div class="admin-nav-scroller">
             <div class="admin-menu-wrap">
                 <ul>
-                    {{ menuList }}
                     <li class="depth" v-for="(item, index) in menuList" :key="index">
                         <button type="button"
                             :class="['admin-menu-item dep1', { 'active': item.isActive }, { 'no-child': item?.submenu?.length == 0 }]"

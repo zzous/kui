@@ -133,7 +133,7 @@
  nav
  *****************************************************************/
 .nav-hide #adminNav {
-  left: -230px;
+  left: -180px;
 }
 
 .nav-hide #adminNav::after {
@@ -148,9 +148,9 @@
 #adminNav {
   position: fixed;
   left: 0;
-  top: 60px;
+  top: 105px;
   bottom: 0;
-  width: 250px;
+  width: 180px;
   border-width: 0 1px;
   border-style: solid;
   border-color: var(--base-bd-color);
@@ -174,10 +174,10 @@
 
 #adminNav .nav-toggle {
   position: absolute;
-  top: 11px;
-  right: -40px;
-  width: 40px;
-  height: 40px;
+  top: 5px;
+  right: -30px;
+  width: 30px;
+  height: 30px;
   background-color: #fff;
   border: 1px solid #d2d2d2;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
@@ -369,8 +369,9 @@
 .admin-menu-item {
   display: inline-block;
   width: 100%;
-  padding: 9px 5px 9px 20px;
+  padding: 6px 5px 6px 30px;
   text-align: left;
+  font-size:12px;
 }
 
 .admin-menu-item:hover,
