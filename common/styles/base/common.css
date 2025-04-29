@@ -2,6 +2,7 @@
   --base-txt-color: #444;
   --strong-txt-color: #222;
   --primary-txt-color: #ffbc00;
+  --primary-bg-color: #4e473f;
   --point-txt-color: #287eff;
   --error-txt-color: #ff3232;
   --placeholder-txt-color: #999;
@@ -16,7 +17,7 @@ html {
 }
 
 body {
-  font: normal 14px/1.44 'KBFGText', 'Apple SD Gothic Neo', 'AppleSDGothicNeo', sans-serif;
+  font: normal 12px/1.44 'KBFGText', 'Apple SD Gothic Neo', 'AppleSDGothicNeo', sans-serif;
   color: var(--base-txt-color);
   letter-spacing: -0.2px;
   word-break: keep-all;
@@ -1172,7 +1173,7 @@ caption,
 }
 .ui-data-filter .form-item{align-items: flex-start; flex-wrap: wrap; width: 100%;}
 .ui-data-filter .form-item .item{align-items: flex-start;}
-.ui-data-filter .form-item .item>label{margin-top: 6px; min-width:60px}
+.ui-data-filter .form-item .item>label{margin-top: 4px; min-width:0px}
 .ui-data-filter.no-line {
   padding: 0;
   border: none;
@@ -1188,10 +1189,11 @@ caption,
 }
 
 .ui-data-filter-more {
-  margin-top: 15px;
-  padding: 15px;
+  margin-top: 10px;
+  padding: 10px;
   background-color: #f7f7f7;
   border-radius: 5px;
+  display: flex;
 }
 
 .ui-data-filter-more .form-item:first-of-type {
@@ -1217,7 +1219,7 @@ caption,
 }
 
 .form-item .item + .item {
-  margin-left: 30px;
+  margin-left: 10px;
 }
 
 .form-item .item .input {
@@ -1230,7 +1232,7 @@ caption,
 }
 
 .form-item .item>label+.input {
-  margin-left: 30px;
+  margin-left: 10px;
 }
 
 .form-item .item .input .dv {
@@ -1269,7 +1271,7 @@ caption,
 .ui-data-filter .btn-filter-set {
   display: flex;
   position: absolute;
-  top: 25px;
+  top: 11px;
   right: 20px;
 }
 
