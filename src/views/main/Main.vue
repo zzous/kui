@@ -166,9 +166,9 @@
                 </div>
         </div>
     </template>
-    <default-modal :is-show="state.modalType" :modal-title="'알림'" :button-confirm="'확인'" :button-cancel="'취소'" :modal-name="'modalAlert'" @modalclose="modalClose">
+    <default-modal :is-show="state.modalType" :modal-title="state.layerTitle" :button-confirm="'확인'"  :modal-name="'modalAlert'" @modalclose="modalClose">
         <template #modalcontent>
-            <component :is="markRaw(sample)"  />
+            <component :is="markRaw(ViewLayer)"  />
         </template>
     </default-modal>
 </template>
@@ -177,7 +177,7 @@
 import { reactive, computed, nextTick, ref, onMounted, markRaw, watch } from 'vue';
 import { useRouter, useRoute } from 'vue-router';
 import { storeToRefs } from 'pinia'
-import sample from '@/views/sample/sample/example1.vue'
+import ViewLayer from '@/views/main/ViewLayer.vue'
 import { useCommFunc } from '@/_setting/helper';
 import { initializeEditor } from '@/_setting/ckeditor';
 import CKEditor from '@ckeditor/ckeditor5-vue';
@@ -207,6 +207,7 @@ const state = reactive({
     pageList: [],
     pagesize: 10,
     modalType:false,
+    layerTitle: '',
     value: [
         { headerCheckboxSelection: true, checkboxSelection: true, maxWidth: 30 },
         { headerName: 'GUID',  field: 'groupname',   flex: 1 },
@@ -216,10 +217,12 @@ const state = reactive({
                 const tagTarget = document.createElement('div');
                 tagTarget.innerHTML = tagString;
                 const buttonEventTarget = tagTarget.querySelector(`#prname-${params.node.rowIndex}`);
-                // buttonEventTarget.addEventListener('click', (event) => {
-                //     goToPage('/main/mainview');
                 
-                // });
+                buttonEventTarget.addEventListener('click', (event) => {
+                    state.layerTitle = params.data.groupname;
+                    openModal();
+                
+                });
                 return tagTarget;
             }
         },
@@ -832,16 +835,7 @@ const openSample = () => {
 const modalClose = (type, name) => {
     console.log(type, name);
     if(type === 'modalconfirm'){
-        $Modal.simple({
-        message: 'alert 입니다',
-        type: 'modalAlert',
-        closeButtonHide: true,
-        className:'confirm',
-        buttonText: {
-            ok: '확인',
-            cancel: '취소',
-        }
-    });
+       console.log('modalconfirm');
     }else{
         state.modalType = false;
     }

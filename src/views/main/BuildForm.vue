@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="ui-title-3 mt-50">
+        <div class="ui-title-3">
             <h3>전문이력 상세</h3>
         </div>
         <VeeForm

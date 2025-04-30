@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="ui-title-3 mt-50">
+        <div class="ui-title-3">
             <h3>로그레벨 상세</h3>
             <!-- <div class="abs">
                 <button type="button" class="btn btn-sm">조직관리</button>

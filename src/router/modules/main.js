@@ -18,7 +18,7 @@ const main = [
         name: 'mainview',
         meta: {
             unauthorized: true,
-            sublocation_depth: ['로그관리', '거래로그 상세'],
+            sublocation_depth: ['로그관리', '거래로그 조회', '거래로그 상세'],
         },
         
         component: () => import('@/views/main/MainView.vue'),
@@ -37,7 +37,7 @@ const main = [
         path: '/loglevel',
         meta: {
             unauthorized: true,
-            sublocation_depth: ['로그관리', '로그레벨 조회'],
+            sublocation_depth: ['로그관리', '로그레벨조회'],
         },
         name: 'loglevel',
         component: () => import('@/views/main/Sample.vue'),
@@ -49,7 +49,7 @@ const main = [
             component: () => import('@/views/main/SampleView.vue'),
             meta: {
                 unauthorized: true,
-                sublocation_depth: ['로그관리', '로그레벨 상세'],
+                sublocation_depth: ['로그관리','로그레벨조회', '로그레벨 상세'],
             },
             props: true
         },
@@ -59,7 +59,7 @@ const main = [
             component: () => import('@/views/main/SampleView.vue'),
             meta: {
                 unauthorized: true,
-                sublocation_depth: ['로그관리', '로그레벨 상세'],
+                sublocation_depth: ['로그관리', '로그레벨조회','로그레벨 상세'],
             },
             props: true
         }
@@ -77,7 +77,7 @@ const main = [
         path: '/builddetail',
         meta: {
             unauthorized: true,
-            sublocation_depth: ['전문관리', '전문이력상세'],
+            sublocation_depth: ['전문관리', '전문이력조회', '전문이력상세'],
         },
         name: 'builddetail',
         component: () => import('@/views/main/BuildForm.vue'),
@@ -95,7 +95,7 @@ const main = [
         path: '/notice',
         meta: {
             unauthorized: true,
-            sublocation_depth: ['공지사항'],    
+            sublocation_depth: ['자료실', '공지사항'],    
         },
         name: 'notice',
         component: () => import('@/views/main/Notice.vue'),
@@ -104,7 +104,7 @@ const main = [
         path: '/orgmanage',
         meta: {
             unauthorized: true,
-            sublocation_depth: ['조직관리'],
+            sublocation_depth: ['사용자관리'],
         },  
         name: 'orgmanage',
         component: () => import('@/views/main/Member.vue'),
@@ -113,7 +113,7 @@ const main = [
         path: '/Faq',
         meta: {
             unauthorized: true,
-            sublocation_depth: ['공지사항', 'FAQ'],
+            sublocation_depth: ['자료실', 'FAQ'],
         },  
         name: 'Faq',
         component: () => import('@/views/main/Faq.vue'),

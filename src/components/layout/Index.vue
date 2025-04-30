@@ -71,23 +71,30 @@ const state = reactive({
     menuList:[
         {label:'로그 관리', submenu:[
             {label:'거래 로그 조회', submenu:[
-                {label:'거래 로그 조회1', submenu:[],link:'/main'},
-                {label:'거래 로그 조회2', submenu:[],link:''},
+                {label:'depth3메뉴1', submenu:[],link:'/main'},
+                {label:'depth3메뉴2', submenu:[],link:''},
+                {label:'depth3메뉴3', submenu:[],link:''},
             ],link:''},
             {label:'로그레벨조회', submenu:[],link:'/loglevel'},
         ], link:''},
         {label:'전문 관리', submenu:[
-            {label:'전문이력조회', submenu:[],link:'/buildlist'},
+            {label:'전문이력조회', submenu:[
+                {label:'depth3메뉴1', submenu:[],link:'/buildlist'},
+                {label:'depth3메뉴2', submenu:[],link:''},    
+                {label:'depth3메뉴3', submenu:[],link:''},    
+                {label:'depth3메뉴4', submenu:[],link:''},    
+                {label:'depth3메뉴5', submenu:[],link:''},    
+            ],link:''},
         ], link:''},
         {label:'메뉴권한관리', submenu:[], link:'/authmanage'},
         {label:'사용자관리', submenu:[], link:'/orgmanage'},
-        {label:'공지사항', submenu:[
-            {label:'공지사항', link:'/notice', submenu:[]   },
+        {label:'자료실', submenu:[
+            {label:'공지자료', link:'/notice', submenu:[]   },
             {label:'FAQ', link:'/faq', submenu:[]},
         ], link:''},
-        {label:'로그인', submenu:[], link:'/login'},
-        {label:'회원가입', submenu:[], link:'/member-join'},
-        {label:'비밀번호 변경', submenu:[], link:'/change-pass'},
+        // {label:'로그인', submenu:[], link:'/login'},
+        // {label:'회원가입', submenu:[], link:'/member-join'},
+        // {label:'비밀번호 변경', submenu:[], link:'/change-pass'},
     ],
     currentPage:null,
     pageTabs:[],
@@ -133,7 +140,6 @@ const menuClick = (index, i) => {
     state.activeNum = index;
     state.activeMenu = false;
     state.submenuNum = i;
-
     if (typeof i === 'undefined' || i === null) {
         const menuItem = state.menuList[index];
         if (!menuItem) return;
@@ -160,7 +166,6 @@ const menuClick = (index, i) => {
         }
         return;
     }
-
     const submenuItem = state.menuList[index]?.submenu[i];
     if (!submenuItem) return;
 
@@ -180,23 +185,23 @@ const menuClick = (index, i) => {
 }
 
 
-
+// 페이지 탭 활성화 여부 (링크 또는 라벨 일치 여부)
 const isTabActive = computed(() => {
     return (item) => {
         const currentPath = state.currentPage.url;
+        const currentLabel = state.currentPage.label[1];
         if (!item.submenu || item.submenu.length === 0) {
-            return currentPath === item.link;
+            return currentPath === item.link || currentLabel === item.label;
         }
         if (item.submenu && item.submenu.length > 0) {
-            return currentPath === item.submenu[0].link;
+            return currentPath === item.submenu[0].link || currentLabel === item.submenu[0].label;
         }
         return false;
     }
 });
-
+// 현재 페이지 인덱스 찾기  
 const findLinkIndex = (menuArray, targetLink) => {
     let foundIndex = -1;
-
     menuArray.forEach((item, index) => {
         if (item.link === targetLink) {
             foundIndex = index;
@@ -221,68 +226,129 @@ const findLinkIndex = (menuArray, targetLink) => {
 };
 
 const goToMove = (type) => {
-    const num = findLinkIndex(state.pageTabs, state.currentPage.url);
-    if(type === 'prev'){
-        if(state.pageTabs[(num - 1)].link){
-            router.push(state.pageTabs[(num - 1)].link);
-        }else{
-            router.push(state.pageTabs[(num - 1)].submenu[0].link);
-        }
-    }else if(type === 'next'){
-        if(state.pageTabs[(num + 1)].link){
-            router.push(state.pageTabs[(num + 1)].link);
-        }else{
-            router.push(state.pageTabs[(num + 1)].submenu[0].link);
-        }
+   
+    const currentIndex = state.pageTabs.findIndex(tab => 
+        tab.link === state.currentPage.url || 
+        (tab.submenu && tab.submenu.some(sub => sub.link === state.currentPage.url))
+    );
+    console.log('state.currentPage', state.currentPage,currentIndex);
+    if (type === 'prev' && currentIndex > 0) {
+        findMenuAndUpdate(state.pageTabs[currentIndex - 1].label);
+    } else if (type === 'next' && currentIndex < state.pageTabs.length - 1) {
+        findMenuAndUpdate(state.pageTabs[currentIndex + 1].label);
     }
 };
-const tabClick = (item) => {
-    state.activeNum = findLinkIndex(state.menuList, state.currentPage.url);
-    if(item.submenu && item.submenu.length > 0){
-        item.submenu.forEach((item, index) => {
-            if(item.link === state.currentPage.url){
-                state.submenuNum = index;
-            }
-        });
+
+// 메뉴 상태 업데이트 및 라우팅 함수
+const updateMenuAndRoute = (menuItem, menuIndex, subIndex = 0) => {
+    state.activeNum = menuIndex;
+    state.submenuNum = subIndex;
+    if (menuItem.submenu && menuItem.submenu.length > 0) {
+        router.push(menuItem.submenu[0].link);
         state.activeMenu = true;
-        router.push(item.submenu[state.submenuNum].link);
-    }else{
+    } else {
+        router.push(menuItem.link);
         state.activeMenu = false;
-        router.push(item.link);
     }
-}
-const tabClose = (item) => {
-    
-    if(item.submenu && item.submenu.length > 0){
-        item.submenu.forEach((item, index) => {
-            if(item.link === state.currentPage.url){
-                console.log('현재페이지임')
-                router.push(item.submenu[index-1].link);
-                
+};
+
+// 메뉴 리스트에서 해당 탭의 위치 찾기 라우팅 변경
+const findMenuAndUpdate = (targetLabel) => {
+    console.log('targetLabel', targetLabel);
+    for (let menuIndex = 0; menuIndex < state.menuList.length; menuIndex++) {
+        const menu = state.menuList[menuIndex];
+        if (menu.label === targetLabel) {
+            updateMenuAndRoute(menu, menuIndex);
+            return true;
+        }
+        
+        for (let subIndex = 0; subIndex < menu.submenu.length; subIndex++) {
+            const submenu = menu.submenu[subIndex];
+            
+            if (submenu.label === targetLabel) {    
+                updateMenuAndRoute(submenu, menuIndex, subIndex);
+                return true;
             }
-        });
-    }else{
-        if(item.link === state.currentPage.url){
-            console.log('현재페이지임')
         }
     }
-    // state.pageTabs = state.pageTabs.filter(tab => tab.label !== item.label);
-    // state.activeNum = findLinkIndex(state.menuList, state.currentPage.url);
-   
+    return false;
+};
+
+const findMenuAndUpdateA = (targetLabel) => {
+    for (let menuIndex = 0; menuIndex < state.menuList.length; menuIndex++) {
+        const menu = state.menuList[menuIndex];
+        
+        if (menu.label === targetLabel) {
+            state.activeNum = menuIndex;
+            return true;
+        }
+        
+        for (let subIndex = 0; subIndex < menu.submenu.length; subIndex++) {
+            const submenu = menu.submenu[subIndex];
+            if (submenu.label === targetLabel) {
+                state.activeNum = menuIndex;
+                state.submenuNum = subIndex;
+                return true;
+            }
+        }
+    }
+    return false;
+};
+
+
+const tabClick = (item) => {
+    const currentTabIndex = state.pageTabs.findIndex(tab => tab.label === item.label);
+    console.log('currentTabIndex', state.pageTabs[currentTabIndex]);
+    if (currentTabIndex === -1) return;
+    findMenuAndUpdate(item.label);
 }
+
+const tabClose = (item) => {
+    const currentIndex = state.pageTabs.findIndex(tab => tab.label === item.label);
+    
+    // 현재 페이지를 닫는 경우
+    if (state.currentPage.url === item.link || 
+        (item.submenu && item.submenu.some(sub => sub.link === state.currentPage.url))) {
+        // 이전 탭이 있는 경우
+        if (currentIndex > 0) {
+            const prevTab = state.pageTabs[currentIndex - 1];
+            findMenuAndUpdate(prevTab.label);
+        }
+        // 다음 탭이 있는 경우
+        else if (currentIndex < state.pageTabs.length - 1) {
+            const nextTab = state.pageTabs[currentIndex + 1];
+            findMenuAndUpdate(nextTab.label);
+        }
+    }
+    
+    // 탭 목록에서 제거
+    state.pageTabs.splice(currentIndex, 1);
+}
+
+// 탭 링크 업데이트 함수
+const updateTabLink = (currentPath) => {
+    const currentTab = state.pageTabs.find(tab => tab.label === state.currentPage.label[1]);
+    if (currentTab) {
+        currentTab.link = currentPath;
+    }
+    console.log('state.pageTabs', state.pageTabs);
+};
+
 const setLocation = () => {
     state.currentPage = { 
-        'url': route.path, 
+        'url': route.fullPath, 
         'label': route.meta.sublocation_depth, 
     };
-}
+
+    updateTabLink(route.fullPath);
+};
 
 onMounted(() => {
     setLocation();
     nextTick(() => {
         const num = findLinkIndex(state.menuList, state.currentPage.url);
         state.activeNum = num;
-        if(state.menuList[num].submenu && state.menuList[num].submenu.length > 0){  
+        if(state.menuList[num]?.submenu && state.menuList[num].submenu.length > 0){  
             let subNum = 0;
             state.menuList[num].submenu.forEach((item, index) => {
                 if(item.link === state.currentPage.url){
@@ -291,7 +357,7 @@ onMounted(() => {
             });
             state.pageTabs.push(state.menuList[num].submenu[subNum]);
             state.submenuNum = subNum;
-            if(state.menuList[num].submenu[subNum].submenu && state.menuList[num].submenu[subNum].submenu.length > 0){
+            if(state.menuList[num]?.submenu[subNum]?.submenu && state.menuList[num].submenu[subNum].submenu.length > 0){
                 state.activeMenu = true;  
             }
         }else{
@@ -300,8 +366,36 @@ onMounted(() => {
     })
 });
 
+// 라우트 변경 감지
 watch(route, () => {
     setLocation();
+    nextTick(() => {
+        if (state.currentPage && state.currentPage.label && Array.isArray(state.currentPage.label)) {
+            const currentLabel = state.currentPage.label[1];
+            console.log('currentLabel', currentLabel);
+            
+            // state.pageTabs에서 currentLabel을 찾기
+            const foundTab = state.pageTabs.find(tab => {
+                // 탭의 라벨이 일치하는 경우
+                if (tab.label === currentLabel) return true;
+                
+                // 탭의 서브메뉴 중 라벨이 일치하는 경우
+                if (tab.submenu && tab.submenu.length > 0) {
+                    return tab.submenu.some(sub => sub.label === currentLabel);
+                }
+                
+                return false;
+            });
+            
+            console.log('foundTab', foundTab);
+            
+            if (foundTab) {
+                findMenuAndUpdateA(currentLabel);
+                const isActive = isTabActive.value(foundTab);
+                console.log('isActive', isActive);
+            }
+        }
+    });
 });
 </script>
 <style>

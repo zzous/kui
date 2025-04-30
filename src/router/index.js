@@ -34,6 +34,16 @@ const routes = [
         name: 'sample',
         component: () => import('@/views/sample/Sample.vue'),
     },
+    {
+        path: '/tree',
+        name: 'sample2',
+        component: () => import('@/views/main/Tree.vue'),
+    },
+    {
+        path: '/down',
+        name: 'sample3',
+        component: () => import('@/views/main/DownModal.vue'),
+    },
 ];
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
